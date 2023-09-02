@@ -1,0 +1,164 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- component -->
+<div class="flex bg-white">
+  <div class="md:flex w-2/5 md:w-1/4 h-screen bg-white border-r hidden">
+    <div class="mx-auto py-10">
+      <h1
+        class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150"
+      >
+        Parvez
+      </h1>
+      <ul>
+        <li>
+          <button
+            type="button"
+            class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            aria-controls="dropdown-example"
+            data-collapse-toggle="dropdown-example"
+          >
+            <svg
+              class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 18 21"
+            >
+              <path
+                d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
+              />
+            </svg>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap"
+              >Category</span
+            >
+            <svg
+              class="w-3 h-3 mx-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <ul id="dropdown-example" class="hidden py-2 space-y-2">
+            <li><a href="{% url 'store' %}">All Products </a></li>
+            {% for category in categories %}
+            <li>
+              <a href="{% url 'products_by_category' category.slug %}"
+                >{{ category.category_name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <main class="min-h-screen w-full bg-white border-l">
+    <nav class="flex items-center justify-between px-10 bg-white py-6 border-b">
+      
+      <form action="{% url 'search' %}" class="search" method="GET">
+        <div
+        class="flex items-center bg-gray-100 px-4 py-2 rounded-md space-x-3 w-96"
+      >
+        <input
+        type="text"
+        placeholder="search"
+        class="bg-gray-100 outline-none w-full"
+        name = 'keyword'
+      />
+      <button type="submit">
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 cursor-pointer text-gray-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+      </button>
+    </div>
+      </form>
+      
+      
+    </nav>
+    <div class="mx-6">
+      <h1 class="my-6 text-3xl">{{p_count}} Items Found</h1>
+      <div class="container grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto">
+       {% if products %} {% for product in products %}
+            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg w-96 h-96" src="{{product.images.url}}" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="{{product.get_url}}">
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{product.product_name}}</h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                        </svg>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 dark:text-white">${{product.price}}</span>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">Available</span>
+                    </div>
+                    <a href="{% url 'update_product' id=product.id %}">Update</a>
+                </div>
+                
+            </div>
+        {% endfor %}{% else %}
+        <h1>No resulr fount</h1>
+        {% endif %}
+    </div>
+    </div>
+    <nav class="mt-4" aria-label="Page navigation example">
+ 
+      <ul class="inline-flex -space-x-px text-sm mt-10">
+      {% if products.has_previous %}
+        <li  class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a class="page-link" href="?page={{products.previous_page_number}}">Previous</a></li>
+      {% else %}
+      <li  class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled"><a class="page-link" >Previous</a></li>
+      {% endif%}
+     
+      {% for i in products.paginator.page_range %}
+        <li  class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+      {% endfor %}
+     
+     
+      {% if products.has_next %}
+        <li class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a class="page-link" href="?page={{products.next_page_number}}">Next</a></li>
+      {% else %}
+      <li class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled"><a class="page-link" >Next</a></li>
+      {% endif%}
+      </ul>
+    </nav>
+  </main>
+</div>
+{% endblock content %}

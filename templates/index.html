@@ -1,0 +1,417 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w-full bg-center bg-cover h-[30rem]" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80');">
+    <div class="flex items-center justify-center w-full h-full bg-gray-900/30">
+        <div class="text-center">
+            <h1 class="text-5xl font-black text-blue-500">Bigest Online Bike <span class="text-blue-400"></span><br/>Buy Sale & Exchange</h1>
+            <button class="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Start project</button>
+        </div>
+    </div>
+</div>
+
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+      <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+        Fill Your Dream
+      </h2>
+      <hr class="w-full my-8 border-gray-800" />
+    </div>
+  </div>
+
+{% comment %} ---------------- Slider--------------------------- {% endcomment %}
+<div
+  id="carouselExampleCaptions"
+  class="relative"
+  data-te-carousel-init
+  data-te-ride="carousel">
+  <!--Carousel indicators-->
+  <div
+    class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+    data-te-carousel-indicators>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="0"
+      data-te-carousel-active
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="1"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 2"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="2"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 3"></button>
+  </div>
+
+  <!--Carousel items-->
+  <div
+    class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+    <!--First item-->
+    <div
+      class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-active
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="https://imotorbike.my/news/wp-content/uploads/2020/11/unnamed-1-1.jpg"
+        class="block w-full h-[38rem]"
+        alt="..." />
+      <div
+        class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+        <h5 class="text-4xl font-black">Find Your Dream Bike</h5>
+        <p>
+          Some representative placeholder content for the first slide.
+        </p>
+      </div>
+    </div>
+    <!--Second item-->
+    <div
+      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="https://www.yankodesign.com/images/design_news/2022/12/auto-draft/tesla_cyberbike_concept_5.jpg"
+        class="block w-full h-[38rem]"
+        alt="..." />
+      <div
+        class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+        <h5 class="text-4xl font-black">We Always Ready </h5>
+        <p>
+          Some representative placeholder content for the second slide.
+        </p>
+      </div>
+    </div>
+    <!--Third item-->
+    <div
+      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="https://www.yankodesign.com/images/design_news/2022/12/auto-draft/tesla_cyberbike_concept_2.jpg"
+        class="block w-full h-[38rem]"
+        alt="..." />
+      <div
+        class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+        <h5 class="text-4xl font-black">Where Dream is True</h5>
+        <p>
+          Some representative placeholder content for the third slide.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Carousel controls - prev item-->
+  <button
+    class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="prev">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Previous</span
+    >
+  </button>
+  <!--Carousel controls - next item-->
+  <button
+    class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="next">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Next</span
+    >
+  </button>
+</div>
+{% comment %} ---------------- Part 2--------------------------- {% endcomment %}
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+      <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+        Only 4 Step to Sale Your Product
+      </h2>
+      <hr class="w-full my-8 border-gray-800" />
+    </div>
+  </div>
+<div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 mt-10">
+    <div class="absolute inset-0">
+      <div class="absolute inset-y-0 z-0 w-full h-full bg-gray-100 lg:w-3/4"></div>
+    </div>
+    <div class="relative">
+      <div class="grid gap-12 row-gap-8 lg:grid-cols-2">
+        <div class="grid gap-12 row-gap-5 md:grid-cols-2">
+          <div class="relative mx-auto">
+            <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 w-32 -mt-8 -ml-16 text-blue-gray-100 lg:w-32 lg:-mt-12">
+              <defs>
+                <pattern id="d06ca312-d4ed-465f-ad18-fb0c0f92b6f1" x="0" y="0" width=".135" height=".30">
+                  <circle cx="1" cy="1" r=".7"></circle>
+                </pattern>
+              </defs>
+              <rect fill="url(#d06ca312-d4ed-465f-ad18-fb0c0f92b6f1)" width="52" height="24"></rect>
+            </svg>
+            <div class="relative mt-10">
+              <div class="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-teal-accent-400">
+                <img class="rounded-full" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/biometric-attendance-1912321-1623444.png" alt="">
+              </div>
+              <h6 class="mb-2 font-extrabold text-xl leading-5">
+                Post Your Product
+              </h6>
+              <p class="text-sm text-gray-900">
+                Baseball ipsum dolor sit amet cellar rubber win hack tossed. Slugging catcher slide bench league.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-teal-accent-400 mt-10">
+                <img class="rounded-full" src="https://cdn-icons-png.flaticon.com/512/463/463850.png" alt="">
+            </div>
+            <h6 class="mb-2 leading-5 text-xl font-extrabold">
+              Connect Your Client
+            </h6>
+            <p class="text-sm text-gray-900">
+              They urge you to put down your sword and come join the winners.
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-teal-accent-400 mt-10">
+                <img class="rounded-full" src="https://static.vecteezy.com/system/resources/previews/011/863/694/non_2x/hand-holding-smartphone-online-shopping-sale-concept-illustration-vector.jpg" alt="">
+            </div>
+            <h6 class="mb-2 leading-5 text-xl font-extrabold">
+              Sale Your Product
+            </h6>
+            <p class="text-sm text-gray-900">
+              If one examines precultural libertarianism, one is faced with a choice: either accept rationalism.
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-teal-accent-400 mt-10">
+                <img class="rounded-full" src="https://previews.123rf.com/images/jovanas/jovanas1912/jovanas191200292/136206521-fast-delivery-flat-icon-speed-time-icon.jpg" alt="">
+            </div>
+            <h6 class="mb-2 font-extrabold leading-5 text-xl">
+              Super Fast Dalevary 
+            </h6>
+            <p class="text-sm text-gray-900">
+              Those options are already baked in with this model shoot me an email clear blue water.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="https://images.unsplash.com/photo-1562555129-d10ec6087ff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} ------------------- Count ---------------------------- {% endcomment %}
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+      <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+       Our  Statistics
+      </h2>
+      <hr class="w-full my-8 border-gray-800" />
+    </div>
+  </div>
+
+  <div class="container my-24 px-6 mx-auto">
+  
+    <!-- Section: Design Block -->
+    <section class="mb-32 text-gray-800 text-center">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-0 items-center">
+        <div class="mb-12 lg:mb-0 relative">
+          <svg
+            class="w-12 h-12 text-blue-600 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z"
+            ></path>
+          </svg>
+          <h5 class=" text-blue-600 font-bold text-3xl mb-4">5000+</h5>
+          <h6 class="font-bold text-4xl text-gray-500">Seller</h6>
+          <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+        </div>
+  
+        <div class="mb-12 lg:mb-0 relative">
+          <svg
+            class="w-12 h-12 text-blue-600 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M12.41 148.02l232.94 105.67c6.8 3.09 14.49 3.09 21.29 0l232.94-105.67c16.55-7.51 16.55-32.52 0-40.03L266.65 2.31a25.607 25.607 0 0 0-21.29 0L12.41 107.98c-16.55 7.51-16.55 32.53 0 40.04zm487.18 88.28l-58.09-26.33-161.64 73.27c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.51 209.97l-58.1 26.33c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 276.3c16.55-7.5 16.55-32.5 0-40zm0 127.8l-57.87-26.23-161.86 73.37c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.29 337.87 12.41 364.1c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 404.1c16.55-7.5 16.55-32.5 0-40z"
+            />
+          </svg>
+          <h5 class="text-3xl text-blue-600 font-bold mb-4">4090+</h5>
+          <h6 class="font-bold text-4xl text-gray-500">Client</h6>
+          <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+        </div>
+  
+        <div class="mb-12 md:mb-0 relative">
+          <svg
+            class="w-12 h-12 text-blue-600 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M464 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM112 120c-30.928 0-56 25.072-56 56s25.072 56 56 56 56-25.072 56-56-25.072-56-56-56zM64 384h384V272l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L208 320l-55.515-55.515c-4.686-4.686-12.284-4.686-16.971 0L64 336v48z"
+            />
+          </svg>
+          <h5 class="text-3xl text-blue-600 font-bold mb-4">100000+</h5>
+          <h6 class="font-bold text-4xl text-gray-500">Products</h6>
+          <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+        </div>
+  
+        <div class="relative">
+          <svg
+            class="w-12 h-12 text-blue-600 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <path
+              fill="currentColor"
+              d="M320,32a32,32,0,0,0-64,0v96h64Zm48,128H16A16,16,0,0,0,0,176v32a16,16,0,0,0,16,16H32v32A160.07,160.07,0,0,0,160,412.8V512h64V412.8A160.07,160.07,0,0,0,352,256V224h16a16,16,0,0,0,16-16V176A16,16,0,0,0,368,160ZM128,32a32,32,0,0,0-64,0v96h64Z"
+            />
+          </svg>
+          <h5 class="text-3xl text-blue-600 font-bold mb-4">8000+</h5>
+          <h6 class="font-bold text-4xl text-gray-500 mb-0">Happy Client</h6>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Design Block -->
+    
+  </div>
+{% comment %} ------------------- Category ----------------------- {% endcomment %}
+{% comment %} <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+    <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+     Category
+    </h2>
+    <hr class="w-full my-8 border-gray-800" />
+  </div>
+</div>
+<div class="container grid grid-cols-2 md:grid-cols-3 gap-10 mx-auto ">
+  {% for i in category %}
+  <div class="relative group w-72 h-80 overflow-hidden bg-black m-auto mt-36">
+    <img class="object-cover w-full h-full transform duration-700 backdrop-opacity-100" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1650&q=80" />
+    <div class="absolute w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
+    <div class="absolute bg-gradient-to-t from-black w-full h-full transform duration-500 inset-y-3/4 group-hover:-inset-y-0">
+      <div class="absolute w-full flex place-content-center">
+        <p class="capitalize font-serif font-bold text-xl text-center shadow-2xl text-white mt-10">{{i.category_name}}</p>
+      </div>
+      <button class="absolute mx-12 text-center bottom-32 bg-white text-black font-bold rounded-lg h-10 w-48">Find Now</button>
+    </div>
+  </div>
+  {% endfor %}
+</div> {% endcomment %}
+
+
+
+  {% comment %} ---------------- Offer -------------------- {% endcomment %}
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+    <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+     Grab Your Offer Now
+    </h2>
+    <hr class="w-full my-8 border-gray-800" />
+  </div>
+</div>
+<section class="mb-40">
+  <div class="px-6 py-12 text-center md:px-12">
+    <div class="w-100 mx-auto">
+      <div class="grid items-center lg:grid-cols-2">
+        <div class="">
+          <div
+            class="block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14 backdrop-blur-[30px]">
+            <a href="https://logwork.com/countdown-1ikt" class="countdown-timer" data-timezone="Europe/London" data-date="2023-09-03 15:20">Offer Ends In</a>
+          </div>
+        </div>
+        <div class="md:mb-12 lg:mb-0 ">
+          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
+            class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% comment %} --------------------- Partner ------------------------- {% endcomment %}
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="max-w-screen-sm sm:text-center sm:mx-auto">
+    <h2 class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+     Our Brand Partners
+    </h2>
+    <hr class="w-full my-8 border-gray-800" />
+  </div>
+</div>
+
+<div
+class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+<!--First item-->
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="grid grid-cols-2 row-gap-8 md:grid-cols-5">
+    <div class="text-center md:border-r">
+     <img src="https://www.gifservice.fr/img/gif-vignette-small/c004fe7b20b9773a210ae796d9d7ab6e/13425-transport-motorcycles-yamaha-logo.gif" alt="">
+    </div>
+    <div class="text-center md:border-r">
+     <img class="h-32 w-40" src="https://www.gifservice.fr/img/gif-vignette-small/8e677cb7304138c36f3bf0a04ef33c42/148271-transport-cars-suzuki-logo.gif" alt="">
+    </div>
+    <div class="text-center md:border-r">
+      <img src="https://media.tenor.com/12z7MFANmdYAAAAM/bmw.gif" alt="">
+    </div>
+    <div class="text-center md:border-r">
+      <img class="h-40 w-48" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDlrd2trOTIwYnpjNGRocjdlZGhtMGk1OTlybHU3Y3pqZTdmNWxvaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l9EUN2a8whjQA/giphy.gif" alt="">
+    </div>
+    <div class="text-center">
+      <img src="https://www.gifservice.fr/img/gif-vignette-small/6588f5a9b28c2dae1e749f53ff90e1e0/11489-1967-transport-motorcycles-kawasaki-logo-1967.gif" alt="">
+    </div>
+  </div>
+</div>
+<!--Second item-->
+<div
+  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+  data-te-carousel-item>
+  <img
+    src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+    class="block w-full"
+    alt="Camera" />
+</div>
+</div>
+
+{% endblock  %}
