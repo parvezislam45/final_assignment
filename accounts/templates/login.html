@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Login</h2>
-<h1>{{request.user}}</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
+        <form method="post" enctype="multipart/form-data" class="w-full max-w-md">
+            {% csrf_token %}
+            <div>
+            <h1>User Name</h1>
+                {{form.username}}
+            </div>
+            <div class='mt-10'>
+            <h1>Password</h1>
+                {{form.password}}
+            </div> 
+            <div class="mt-6">
+                <button class="w-40 px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-600 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock  %}

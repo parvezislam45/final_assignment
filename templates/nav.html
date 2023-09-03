@@ -169,7 +169,7 @@
             <li><a href="{% url 'store' %}">All Products </a></li>
             {% for i in category %}
             <li>
-              <a href=""
+              <a href="{% url 'products_by_category' i.slug %}"
                 >{{ i.category_name }}
               </a>
             </li>

@@ -15,7 +15,6 @@
                 </h1>
                 <h5 class='text-lg mt-3 font-bold'>Price - $ {{ single_product.price }}</h5>
                 <p class='mt-4'>{{single_product.description}}</p>
-                {% if user.is_authenticated %}
                 <form method="post">
                   {% csrf_token %}
                   <a href="{% url 'cart' %}">
@@ -29,9 +28,6 @@
                   </a>
                   
               </form>
-              {% else %}
-              <a href="{% url 'login' %}">Login to Buy</a>
-              {% endif %}
               </div>
             </div>
           </form>

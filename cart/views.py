@@ -12,12 +12,23 @@ def _cart_id(request):
     return cart
 
 def add_cart(request,product_id):
+    current_user = request.user
     product = Product.objects.get(id = product_id)
-    try:
-        cart = Cart.objects.get(cart_id =_cart_id(request))
+    if current_user.is_authenticated:
+        is_cart_item_exists = CartItem.objects.filter(product=product, user=current_user).exists()
+        if is_cart_item_exists:
+            cart_items = CartItem.objects.filter(product=product, user=current_user)
+            print(cart_items)
+            item = CartItem.objects.get(product=product, user=current_user)
+            item.quantity += 1
+            item.save()
+            
+        else:
+            try:
+                cart = Cart.objects.get(cart_id =_cart_id(request))
    
-    except Cart.DoesNotExist:
-        cart = Cart.objects.create(
+            except Cart.DoesNotExist:
+                cart = Cart.objects.create(
             cart_id = _cart_id(request)
         )
         cart.save()

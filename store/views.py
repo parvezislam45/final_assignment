@@ -26,19 +26,6 @@ def store(request,category_slug=None):
     return render(request,'store.html',context)
 
 
-@login_required
-def purchase_product(request, product_id):
-    try:
-        product = Product.objects.get(pk=product_id)
-        # Process the purchase logic here
-        # You can create an Order or perform any other required actions
-
-        messages.success(request, f'You have successfully purchased {product.product_name}.')
-    except Product.DoesNotExist:
-        messages.error(request, 'Product not found.')
-
-    return redirect('dashboard')
-
 def product_detail(request,category_slug,product_slug):
     try:
         single_product = Product.objects.get(category__slug=category_slug,slug=product_slug)

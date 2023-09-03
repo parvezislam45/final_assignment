@@ -1,8 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Post Product</button>
-</form>
+<section class="bg-white dark:bg-gray-900">
+    <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
+        <form method="post" enctype="multipart/form-data" class="w-full max-w-md">
+            {% csrf_token %}
+            <div>
+            <h1>Products Name</h1>
+                {{form.product_name}}
+            </div>
+            <div class='mt-10'>
+            <h1>Description</h1>
+                {{form.description}}
+            </div>
+            <div>
+                <h1>Category</h1>
+                {{form.category}}
+            </div>
+            <div>
+                <h1>Stock</h1>
+                {{form.stock}}
+            </div>
+            <div>
+                <h1>Price</h1>
+                {{form.price}}
+            </div>
+            <div>
+                <h1>Image</h1>
+                {{form.images}}
+            </div>
+            <div>
+                <h1>Available</h1>
+                {{form.is_available}}
+            </div>
+            
+            
+            <div class="mt-6">
+                <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                    Post Add
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock  %}
