@@ -5,6 +5,8 @@ from django.contrib import messages
 from category.models import Category
 from django.db.models import Q
 from store.forms import product_post_form
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 # Create your views here.
 def store(request,category_slug=None):
     print(category_slug)
@@ -71,22 +73,19 @@ def add_products(request):
    return render(request,'post.html',{'form':form})
 
 
-def update_product(request, id):
-    product = get_object_or_404(Product, id=id)
-
+def editProduct(request,id):
+    product = Product.objects.get(pk = id)
+    form = product_post_form(instance = product)
     if request.method == 'POST':
-        form = product_post_form(request.POST, request.FILES, instance=product)
+        form = product_post_form(request.POST,instance = product)
         if form.is_valid():
             form.save()
-            return redirect('product_detail', product_id=id)
-    else:
-        form = product_post_form(instance=product)
+            return redirect('store')
+    return render(request,'post.html',{'form':form})
 
-    return render(request, 'post.html', {'form': form, 'product': product})
-
-def product_detail(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    return render(request, 'product_detail.html', {'product': product})
+def delateProduct(request,id):
+    book = Product.objects.get(pk = id).delete()
+    return redirect('store')
 
 
 

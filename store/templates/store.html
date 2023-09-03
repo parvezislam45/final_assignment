@@ -129,7 +129,11 @@
                         <span class="text-3xl font-bold text-gray-900 dark:text-white">${{product.price}}</span>
                         <span class="text-xl font-bold text-gray-900 dark:text-white">Available</span>
                     </div>
-                    <a href="{% url 'update_product' id=product.id %}">Update</a>
+                    <div class='flex justify-center items-center gap-10'>
+                      <a href="{% url 'edit_product' id=product.id %}" class="btn btn-success btn-sm">Update</a>
+                      <a href="{% url 'delete_product' id=product.id %}" class="btn btn-danger btn-sm">Delate</a>
+                    </div>
+                    
                 </div>
                 
             </div>
